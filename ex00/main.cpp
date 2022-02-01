@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 19:29:59 by hgicquel          #+#    #+#             */
-/*   Updated: 2022/02/01 19:41:41 by hgicquel         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:43:22 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,25 @@
 
 int	main(void)
 {
-	int	a = 42;
-	int	b = 21;
+	int a = 2;
+	int b = 3;
 
-	std::cout << "a = " << a << "\n";
-	std::cout << "b = " << b << "\n";
+	::swap( a, b );
 
-	swap(a, b);
+	std::cout << "a = " << a << ", b = " << b << std::endl;
 
-	std::cout << "a = " << a << "\n";
-	std::cout << "b = " << b << "\n";
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 
-	std::cout << "min(a,b) = " << min(a, b) << "\n";
-	std::cout << "max(a,b) = " << max(a, b) << "\n";
+	std::string c = "chaine1";
+	std::string d = "chaine2";
 
-	return (0);
+	::swap(c, d);
+
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	return 0;
 }
