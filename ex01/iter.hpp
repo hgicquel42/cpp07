@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 19:45:28 by hgicquel          #+#    #+#             */
-/*   Updated: 2022/02/01 19:56:01 by hgicquel         ###   ########.fr       */
+/*   Updated: 2022/02/02 12:42:56 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include <iostream>
 
 template <typename T>
-void	iter(T* p, int l, void (*f)(T& v))
+void	iter(T* p, int l, void (*f)(const T& v))
 {
 	for (int i = 0; i < l; i++)
 		f(p[i]);
 }
 
 template<typename T>
-void	display(T& v)
+void	display(const T& v)
 {
 	std::cout << v << "\n";
 }
