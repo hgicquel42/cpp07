@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 20:17:35 by hgicquel          #+#    #+#             */
-/*   Updated: 2022/02/02 14:16:39 by hgicquel         ###   ########.fr       */
+/*   Updated: 2022/02/02 14:24:11 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,20 @@ Array<T>::~Array(void)
 template <typename T>
 Array<T>&	Array<T>::operator=(const Array<T>& from)
 {
+	if (*this == from)
+		return (*this);
 	delete[] this->array;
 	this->length = from->length;
 	this->array = new T[this->length];
 	for (int i = 0; i < this->length; i++)
 		this->array[i] = from.array[i];
+	return (*this);
 }
 
 template <typename T>
 T&	Array<T>::operator[](unsigned int i) const
 {
-	if (i < 0 || i >= this->length)
+	if (i >= this->length)
 		throw IndexOutOfBoundsException();
 	return (this->array[i]);
 }
